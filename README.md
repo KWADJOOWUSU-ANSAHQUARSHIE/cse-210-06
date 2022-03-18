@@ -3,7 +3,7 @@ Final Project
 test commit by bryan
 
 --Kwadjo-- gem (NPC) = fly (add a point or life)
---Jeremy-- robot = frog  -move anywhere on the grid, single button press per space on grid
+**DONE** --Jeremy-- robot = frog  -move anywhere on the grid, single button press per space on grid
 --Bryan-- rocks = cars (loose a point or life) goes right to left
 
 npc = non player character
