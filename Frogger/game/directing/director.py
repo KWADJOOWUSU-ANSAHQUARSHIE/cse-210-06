@@ -61,8 +61,10 @@ class Director:
         # banner.set_text(f"You have {points} points")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
+        frog.move_next(max_x, max_y)
         npc = cast.get_actors("npc")
         cars = cast.get_actors("cars")
+
         
         for actor in actors:
             actor.move_next(max_x, max_y)

@@ -22,7 +22,7 @@ CELL_SIZE = 15
 FONT_SIZE = 15
 COLS = 60
 ROWS = 40
-CAPTION = "Greed"
+CAPTION = "Frogger"
 WHITE = Color(255, 255, 255)
 DEFAULT_FROG = 20
 DEFAULT_CARS = 20
@@ -41,13 +41,11 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
     
-#TODO change from robot to player
-    # create the robot
+    # create the frog
     x = int(MAX_X / 2)
     y = MAX_Y - CELL_SIZE
     position = Point(x, y)
 
-#TODO change from robot to player
     frog = Actor()
     frog.set_text("_")
     frog.set_font_size(FONT_SIZE)
