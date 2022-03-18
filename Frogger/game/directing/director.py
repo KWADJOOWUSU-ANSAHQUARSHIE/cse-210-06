@@ -44,9 +44,9 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
-        robot = cast.get_first_actor("robots")
+        frog = cast.get_first_actor("frog")
         velocity = self._keyboard_service.get_direction()
-        robot.set_velocity(velocity)        
+        frog.set_velocity(velocity)        
    
 
     def _do_updates(self, cast):
