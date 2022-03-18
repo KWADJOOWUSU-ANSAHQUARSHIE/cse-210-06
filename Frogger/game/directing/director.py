@@ -1,5 +1,5 @@
-from game.casting.gem import Gem
-from game.casting.rock import Rock
+from game.casting.npc import Npc
+from game.casting.cars import Cars
 
 CELL_SIZE = 15
 FONT_SIZE = 15
@@ -56,34 +56,34 @@ class Director:
             cast (Cast): The cast of actors.
         """
         banner = cast.get_first_actor("banners")
-        robot = cast.get_first_actor("robots")
+        frog = cast.get_first_actor("frog")
         actors = cast.get_all_actors()
         # banner.set_text(f"You have {points} points")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
-        gem = cast.get_actors("gems")
-        rock = cast.get_actors("rocks")
+        npc = cast.get_actors("npc")
+        cars = cast.get_actors("cars")
         
         for actor in actors:
             actor.move_next(max_x, max_y)
         
-        for gem in gem:  
-            if robot.get_position().equals(gem.get_position()):
+        for npc in npc:  
+            if frog.get_position().equals(npc.get_position()):
                 self._points += 1
                 banner.set_text(f"You have {self._points} points")
-                cast.remove_actor("gems", gem)
-                gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 1)
-                cast.add_actor("gems", gem)
+                cast.remove_actor("npc", npc)
+                npc = Npc(COLS, CELL_SIZE, FONT_SIZE, 1)
+                cast.add_actor("npc", npc)
 
                 
         
-        for rock in rock:  
-            if robot.get_position().equals(rock.get_position()):
+        for cars in cars:  
+            if frog.get_position().equals(cars.get_position()):
                 self._points -= 1
                 banner.set_text(f"You have {self._points} points")
-                cast.remove_actor("rocks", rock)
-                rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 1)
-                cast.add_actor("rocks", rock)
+                cast.remove_actor("cars", cars)
+                cars = Cars(COLS, CELL_SIZE, FONT_SIZE, 1)
+                cast.add_actor("cars", cars)
            
   
         

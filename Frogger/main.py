@@ -2,8 +2,8 @@ import os
 import random
 
 from game.casting.actor import Actor
-from game.casting.gem import Gem
-from game.casting.rock import Rock
+from game.casting.npc import Npc
+from game.casting.cars import Cars
 from game.casting.cast import Cast
 
 from game.directing.director import Director
@@ -24,8 +24,8 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
-DEFAULT_GEMS = 20
-DEFAULT_ROCKS = 20
+DEFAULT_FROG = 20
+DEFAULT_CARS = 20
 
 
 def main():
@@ -48,25 +48,25 @@ def main():
     position = Point(x, y)
 
 #TODO change from robot to player
-    robot = Actor()
-    robot.set_text("_")
-    robot.set_font_size(FONT_SIZE)
-    robot.set_color(WHITE)
-    robot.set_position(position)
-    cast.add_actor("robots", robot)
+    frog = Actor()
+    frog.set_text("_")
+    frog.set_font_size(FONT_SIZE)
+    frog.set_color(WHITE)
+    frog.set_position(position)
+    cast.add_actor("frog", frog)
     
     # create the artifacts
 
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 1)
-        cast.add_actor("rocks", rock)
+    for n in range(DEFAULT_CARS): 
+        cars = Cars(COLS, CELL_SIZE, FONT_SIZE, 1)
+        cast.add_actor("cars", cars)
 
    
 
 
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 1)
-        cast.add_actor("gems", gem)
+    for n in range(DEFAULT_FROG): 
+        npc = Npc(COLS, CELL_SIZE, FONT_SIZE, 1)
+        cast.add_actor("npc", npc)
 
     
     
