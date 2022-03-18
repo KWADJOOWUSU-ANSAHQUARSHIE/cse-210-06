@@ -10,9 +10,9 @@ FONT_SIZE = 15
 COLS = 60
 ROWS = 40
 
-class Rock(Actor):
+class Cars(Actor):
     """
-    A destructive actor. Subtracts one from the player when hit
+    A destructive actor. Smashes player when hit
 
     Attributes:
         character velocity and score
