@@ -19,7 +19,7 @@ class KeyboardService:
             cell_size (int): The size of a cell in the display grid.
         """
         self._cell_size = cell_size
-
+#So simple it looks great
     def get_direction(self):
         """Gets the selected direction based on the currently pressed keys.
 
